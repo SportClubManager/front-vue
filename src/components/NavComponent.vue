@@ -21,7 +21,7 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">About us</a></li>
         <li><a href="#">Contacts</a></li>
-        <li><a href="#">Sign in</a></li>
+        <li><router-link :to="{ name: 'signin' }">Sign In</router-link></li>
     </ul>
 
 </template>
