@@ -1,29 +1,38 @@
 @import "tailwindcss/base";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  font-family: Ubuntu, sans-serif;
-  margin: 0;
-  padding: 0;
-  @apply bg-zinc-800 text-slate-50
+    font-family: Ubuntu, sans-serif;
+    margin: 0;
+    padding: 0;
+    @apply bg-zinc-800 text-slate-50
 }
 
 *:focus {
-  @apply outline-none bg-zinc-700
+    @apply outline-none bg-zinc-700
 }
 
 input {
-  @apply p-1 font-normal border-b border-zinc-600
+    @apply p-1 font-normal border-b border-zinc-600
 }
 
 a {
-  @apply text-sky-500
+    @apply text-sky-500
 }
 
-button {
-  @apply bg-teal-600 rounded py-2 px-4
+form {
+    @apply w-full space-y-2
+}
+
+form * {
+    @apply w-full
+}
+
+button[type="submit"] {
+    @apply bg-teal-600 rounded py-2 px-4
 }
 
 input:-webkit-autofill,
@@ -35,7 +44,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: white;
-  box-shadow: 0 0 0 1000px rgb(39 39 42) inset;
-  color: white;
+    -webkit-text-fill-color: white;
+    box-shadow: 0 0 0 1000px rgb(39 39 42) inset;
+    color: white;
 }

@@ -1,17 +1,14 @@
 <template>
     <div id="nav-icon" @click="toggleMenu" :class="{ active: isActive }">
-        <div class="flex overflow-hidden items-center justify-center transform transition-all duration-200">
-            <div class="flex flex-col bg-zinc-700 justify-between w-5 h-5 transform transition-all duration-300">
-                <div class="bg-teal-500 h-[2px] w-7 transform transition-all duration-300 origin-left delay-100"></div>
-                <div class="bg-teal-500 h-[2px] w-8 rounded transform transition-all duration-300 delay-75"></div>
-                <div class="bg-teal-500 h-[2px] w-7 transform transition-all duration-300 origin-left "></div>
+        <div class="flex overflow-hidden items-center justify-center duration-200">
+            <div class="flex flex-col justify-between bg-zinc-700 w-5 h-5 duration-300">
+                <div class="bg-teal-500 h-[2px] w-7 duration-300 delay-100 origin-left"></div>
+                <div class="bg-teal-500 h-[2px] w-8 duration-300 delay-75 rounded"></div>
+                <div class="bg-teal-500 h-[2px] w-7 duration-300 origin-left "></div>
 
-                <div
-                    class="absolute items-center justify-between transform transition-all duration-500 top-2.5 -translate-x-10 flex w-0">
-                    <div
-                        class="absolute bg-red-400 h-[2px] w-5 transform transition-all duration-500 rotate-0 delay-300"></div>
-                    <div
-                        class="absolute bg-red-400 h-[2px] w-5 transform transition-all duration-500 -rotate-0 delay-300"></div>
+                <div class="absolute items-center justify-between duration-500 top-2.5 -translate-x-10 flex w-0">
+                    <div class="absolute bg-red-400 h-[2px] w-5 duration-500 rotate-0 delay-300"></div>
+                    <div class="absolute bg-red-400 h-[2px] w-5 duration-500 -rotate-0 delay-300"></div>
                 </div>
             </div>
         </div>
@@ -21,7 +18,9 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">About us</a></li>
         <li><a href="#">Contacts</a></li>
-        <li><router-link :to="{ name: 'signin' }">Sign In</router-link></li>
+        <li>
+            <router-link :to="{ name: 'signin' }">Sign In</router-link>
+        </li>
     </ul>
 
 </template>
@@ -39,6 +38,10 @@ const toggleMenu = () => {
 
 * {
     @apply bg-zinc-700;
+}
+
+#nav-icon div {
+    @apply transform transition-all
 }
 
 #nav-icon.active > div > div > div:nth-child(-n+3) {
