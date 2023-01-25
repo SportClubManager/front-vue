@@ -13,13 +13,15 @@
             </div>
         </div>
     </div>
-
-    <ul class="w-full border-t border-teal-600 mt-2.5 pt-2.5 text-right space-y-2.5" v-if="isActive">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Contacts</a></li>
-        <li>
-            <router-link :to="{ name: 'signin' }">Sign In</router-link>
+    <ul class="w-full border-t border-teal-600 mt-2.5 pt-2.5 text-right space-y-2.5" v-if="isActive" @click="isActive=false">
+        <li v-if="authStore.isAuth">
+            <router-link :to="{ name: 'home' }">Home</router-link>
+        </li>
+        <li v-if="!authStore.isAuth">
+            <router-link :to="{ name: 'login' }">Log In</router-link>
+        </li>
+        <li v-if="authStore.isAuth" @click.prevent="authStore.logout()">
+            <a>Log Out</a>
         </li>
     </ul>
 
@@ -27,8 +29,11 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useAuthStore } from '@/store/authStore';
 
+const authStore = useAuthStore();
 const isActive = ref(false);
+
 const toggleMenu = () => {
     isActive.value = !isActive.value;
 };
