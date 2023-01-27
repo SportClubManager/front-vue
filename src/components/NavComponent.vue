@@ -13,9 +13,13 @@
             </div>
         </div>
     </div>
-    <ul class="w-full border-t border-teal-600 mt-2.5 pt-2.5 text-right space-y-2.5" v-if="isActive" @click="isActive=false">
+    <ul class="w-full border-t border-teal-600 mt-2.5 pt-2.5 text-right space-y-2.5" v-if="isActive"
+        @click="isActive=false">
         <li v-if="authStore.isAuth">
             <router-link :to="{ name: 'home' }">Home</router-link>
+        </li>
+        <li v-if="authStore.isAuth">
+            <router-link :to="{ name: 'athletes' }">Athletes</router-link>
         </li>
         <li v-if="!authStore.isAuth">
             <router-link :to="{ name: 'login' }">Log In</router-link>
@@ -63,5 +67,12 @@ const toggleMenu = () => {
 
 #nav-icon.active > div > div > div:nth-child(4) > div:nth-child(2) {
     @apply -rotate-45
+}
+
+ul > li, ul > li > a {
+    @apply w-full
+}
+.router-link-active {
+    @apply border-r-2 border-teal-600 text-slate-50 pr-1.5
 }
 </style>

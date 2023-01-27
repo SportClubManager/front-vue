@@ -20,7 +20,11 @@ input {
 }
 
 a {
-    @apply text-sky-500
+    @apply text-sky-50
+}
+
+a:hover {
+    @apply cursor-pointer
 }
 
 form {

@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "firstName": "Taras",
+        "lastName": "Tarasuk",
+        "dob": "2000-01-20",
+        "sex": "male",
+        "phone": "",
+        "email": ""
+    },
+    {
+        "id": 2,
+        "firstName": "Danyl",
+        "lastName": "Danyluk",
+        "dob": "1989-09-16",
+        "sex": "male",
+        "phone": "",
+        "email": ""
+    },
+    {
+        "id": 3,
+        "firstName": "Hana",
+        "lastName": "Hanenko",
+        "dob": "1999-03-28",
+        "sex": "female",
+        "phone": "",
+        "email": ""
+    }
+]
