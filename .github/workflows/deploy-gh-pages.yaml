@@ -37,3 +37,8 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message: |
+            ${{ github.actor }} published changes to master:
+            Commit message: ${{ github.event.commits[0].message }}
+            Repository: ${{ github.repository }}
+            See changes: https://sportclubmanager.github.io/front-end/
