@@ -6,12 +6,13 @@ import { useHeaderStore } from '@/store/headerStore';
 const guard = (to, from, next) => {
     const authStore = useAuthStore();
 
+    if (to.name === 'login') {
+        next();
+        return;
+    }
+
     if (authStore.isAuth) {
-        if (to.name === 'login') {
-            next({ name: 'home' });
-        } else {
-            next();
-        }
+        next();
     } else {
         next({ name: 'login' });
     }
