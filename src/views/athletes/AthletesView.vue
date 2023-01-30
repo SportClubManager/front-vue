@@ -2,23 +2,23 @@
     <table class="border-collapse table-auto w-full text-sm">
         <thead>
         <tr>
-            <th class=" pl-8 pt-0 pb-3   ">
+            <th class="pl-8 pt-0 pb-3">
                 <p>Full Name</p>
                 <p>(sex)</p>
             </th>
-            <th class="  pr-8 pt-0 pb-3  ">
+            <th class="pr-8 pt-0 pb-3">
                 <p>DOB</p>
                 <p>(age)</p>
             </th>
-            <th class="  pr-8 pt-0 pb-3  ">
+            <th class="pr-8 pt-0 pb-3">
                 <p>Actions</p>
-                <a href="#" class="text-green-500">add</a>
+                <a href="#" class="text-green-500">+ add</a>
             </th>
         </tr>
         </thead>
         <tbody>
-        <tr v-for="athlete in athletesStore.athletes" :key="athlete.id">
-            <td class="  pl-8  ">
+        <tr v-for="athlete in athletes" :key="athlete.id">
+            <td class="pl-8">
                 <p>{{ athlete.firstName }} {{ athlete.lastName }}</p>
                 <p>({{ athlete.sex }})</p>
             </td>
@@ -27,24 +27,43 @@
                 <p>({{ age(athlete) }})</p>
             </td>
             <td>
-                <a href="#" class="block text-right text-yellow-500">edit</a>
-                <a href="#" class="block text-right text-red-500">delete</a>
+                <a href="#" class="block text-right text-blue-400">charge</a>
             </td>
         </tr>
         </tbody>
     </table>
+    <pagination-component
+        :totalPages="totalPages"
+        :perPage="perPage"
+        :maxVisibleButtons="3"
+        :currentPage="currentPage"
+        @pagechanged="onPageChange"
+    />
 </template>
 
 <script setup>
-import { useAthletesStore } from '@/store/AthletesStore';
+import { useAthletesStore } from '@/store/athletesStore';
+import { ref } from 'vue';
+import PaginationComponent from '@/components/PaginationComponent.vue';
 
 const athletesStore = useAthletesStore();
+const currentPage = ref(1);
+const perPage = ref(5);
+const totalPages = ref(Math.ceil(athletesStore.athletes.length / perPage.value));
+const athletes = ref(athletesStore.get(0, perPage.value));
 
 const age = (athlete) => {
     let currentDate = new Date();
     let birthDate = new Date(athlete.dob);
 
     return Math.floor((currentDate - birthDate) / 31557600000);
+};
+
+const onPageChange = (page) => {
+    currentPage.value = page;
+    let from = Math.imul(perPage.value, page) - perPage.value;
+    let to = Math.imul(perPage.value, page);
+    athletes.value = athletesStore.get(from, to);
 };
 </script>
 

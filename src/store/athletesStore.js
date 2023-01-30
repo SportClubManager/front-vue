@@ -5,6 +5,12 @@ export const useAthletesStore = defineStore('athleteStore', {
     state: () => ({
         athletes,
     }),
-    getters: {},
+    getters: {
+        get: (state) => {
+            return (from, to) => {
+                return state.athletes.slice(from, to);
+            };
+        },
+    },
     actions: {},
 });

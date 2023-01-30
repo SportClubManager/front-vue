@@ -1,5 +1,5 @@
 <template>
-    <div id="nav-icon" @click="toggleMenu" :class="{ active: isActive }">
+    <div id="nav-icon" class="button" @click="toggleMenu" :class="{ active: isActive }">
         <div class="flex overflow-hidden items-center justify-center duration-200">
             <div class="flex flex-col justify-between bg-zinc-700 w-5 h-5 duration-300">
                 <div class="bg-teal-500 h-[2px] w-7 duration-300 delay-100 origin-left"></div>
@@ -53,6 +53,10 @@ const toggleMenu = () => {
     @apply transform transition-all
 }
 
+#nav-icon.active {
+    @apply border-red-400
+}
+
 #nav-icon.active > div > div > div:nth-child(-n+3) {
     @apply translate-y-6
 }
@@ -72,6 +76,7 @@ const toggleMenu = () => {
 ul > li, ul > li > a {
     @apply w-full
 }
+
 .router-link-active {
     @apply border-r-2 border-teal-600 text-slate-50 pr-1.5
 }
