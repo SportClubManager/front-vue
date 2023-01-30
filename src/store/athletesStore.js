@@ -12,5 +12,9 @@ export const useAthletesStore = defineStore('athleteStore', {
             };
         },
     },
-    actions: {},
+    actions: {
+        add: (athlete) => {
+            athletes.push(athlete);
+        },
+    },
 });

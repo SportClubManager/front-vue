@@ -9,15 +9,6 @@
                 First
             </button>
         </li>
-        <li>
-            <button
-                type="button"
-                @click="onClickPreviousPage"
-                :disabled="isInFirstPage"
-            >
-                Prev
-            </button>
-        </li>
         <!-- Visible Buttons Start -->
         <li v-for="page in pages" :key="page.name">
             <button
@@ -29,15 +20,6 @@
             </button>
         </li>
         <!-- Visible Buttons End -->
-        <li>
-            <button
-                type="button"
-                @click="onClickNextPage"
-                :disabled="isInLastPage"
-            >
-                Next
-            </button>
-        </li>
         <li>
             <button
                 type="button"
@@ -63,24 +45,30 @@ const props = defineProps({
 const emit = defineEmits(['pagechanged']);
 
 const startPage = computed(() => {
-    // When on the first page
-    if (props.currentPage === 1) {
+    console.log('props.perPage', props.perPage);
+    console.log('props.totalPages', props.totalPages);
+    console.log('props.maxVisibleButtons', props.maxVisibleButtons);
+    let sp = props.currentPage - Math.floor(props.perPage / 2);
+
+    if (sp < 1) {
         return 1;
     }
 
-    // When on the last page
-    if (props.currentPage === props.totalPages) {
+    if (sp > props.totalPages - props.maxVisibleButtons) {
         return props.totalPages - props.maxVisibleButtons + 1;
     }
 
-    // When inbetween
-    return props.currentPage - 1;
+    if (sp > props.totalPages) {
+        return props.totalPages;
+    }
+
+    return sp;
 });
 
 const pages = computed(() => {
     const range = [];
 
-    for (let i = startPage.value; i <= Math.min(startPage.value + props.maxVisibleButtons - 1, props.totalPages); i++) {
+    for (let i = startPage.value; i < startPage.value + props.maxVisibleButtons; i++) {
         range.push({ name: i, isDisabled: i === props.currentPage });
     }
 
@@ -98,14 +86,8 @@ const isInLastPage = computed(() => {
 const onClickFirstPage = () => {
     emit('pagechanged', 1);
 };
-const onClickPreviousPage = () => {
-    emit('pagechanged', props.currentPage - 1);
-};
 const onClickPage = (page) => {
     emit('pagechanged', page);
-};
-const onClickNextPage = () => {
-    emit('pagechanged', props.currentPage + 1);
 };
 const onClickLastPage = () => {
     emit('pagechanged', props.totalPages);

@@ -43,6 +43,14 @@ const router = createRouter({
             },
         },
         {
+            path: '/athletes/add',
+            name: 'addAthlete',
+            component: () => import('@/views/athletes/AddAthleteView.vue'),
+            meta: {
+                title: 'Athletes',
+            },
+        },
+        {
             path: '/login',
             name: 'login',
             component: () => import('@/views/LoginView.vue'),

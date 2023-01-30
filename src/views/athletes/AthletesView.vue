@@ -12,7 +12,7 @@
             </th>
             <th class="pr-8 pt-0 pb-3">
                 <p>Actions</p>
-                <a href="#" class="text-green-500">+ add</a>
+                <router-link :to="{name: 'addAthlete'}" class="text-green-500">+ add</router-link>
             </th>
         </tr>
         </thead>
@@ -35,7 +35,7 @@
     <pagination-component
         :totalPages="totalPages"
         :perPage="perPage"
-        :maxVisibleButtons="3"
+        :maxVisibleButtons="5"
         :currentPage="currentPage"
         @pagechanged="onPageChange"
     />
