@@ -2,32 +2,33 @@
     <table class="border-collapse table-auto w-full text-sm">
         <thead>
         <tr>
-            <th class="pl-8 pt-0 pb-3">
+            <th>
                 <p>Full Name</p>
                 <p>(sex)</p>
             </th>
-            <th class="pr-8 pt-0 pb-3">
+            <th>
                 <p>DOB</p>
                 <p>(age)</p>
             </th>
-            <th class="pr-8 pt-0 pb-3">
-                <p>Actions</p>
-                <router-link :to="{name: 'addAthlete'}" class="text-green-500">+ add</router-link>
+            <th class="text-right">
+                <router-link :to="{name: 'addAthlete'}" class="button button-primary">+ add</router-link>
             </th>
         </tr>
         </thead>
         <tbody>
         <tr v-for="athlete in athletes" :key="athlete.id">
             <td class="pl-8">
-                <p>{{ athlete.firstName }} {{ athlete.lastName }}</p>
+                <router-link :to="{name: 'athleteDetails', params: {id: athlete.id}}">{{ athlete.firstName }}
+                    {{ athlete.lastName }}
+                </router-link>
                 <p>({{ athlete.sex }})</p>
             </td>
             <td>
                 <p>{{ athlete.dob }}</p>
                 <p>({{ age(athlete) }})</p>
             </td>
-            <td>
-                <a href="#" class="block text-right text-blue-400">charge</a>
+            <td class="text-right">
+                <a href="#" class="button button-info">charge</a>
             </td>
         </tr>
         </tbody>
@@ -48,9 +49,9 @@ import PaginationComponent from '@/components/PaginationComponent.vue';
 
 const athletesStore = useAthletesStore();
 const currentPage = ref(1);
-const perPage = ref(5);
+const perPage = ref(10);
 const totalPages = ref(Math.ceil(athletesStore.athletes.length / perPage.value));
-const athletes = ref(athletesStore.get(0, perPage.value));
+const athletes = ref(athletesStore.findAll(0, perPage.value));
 
 const age = (athlete) => {
     let currentDate = new Date();
@@ -63,7 +64,7 @@ const onPageChange = (page) => {
     currentPage.value = page;
     let from = Math.imul(perPage.value, page) - perPage.value;
     let to = Math.imul(perPage.value, page);
-    athletes.value = athletesStore.get(from, to);
+    athletes.value = athletesStore.findAll(from, to);
 };
 </script>
 

@@ -1,7 +1,7 @@
 <template>
-    <header class="flex flex-wrap justify-between p-2.5 mb-2.5 bg-zinc-700 border-b  border-teal-600 shadow-amber-50 shadow-md shadow-teal-800 sticky top-0">
-        <h1 class="bg-zinc-700">{{ headerStorage.title }}</h1>
-        <nav-component/>
+    <header class="flex flex-wrap justify-between p-2.5 mb-2.5 border-b  border-teal-600 shadow-md shadow-teal-800 sticky top-0">
+        <h1>{{ headerStorage.title }}</h1>
+        <nav-component />
     </header>
 </template>
 
@@ -13,6 +13,10 @@ const headerStorage = useHeaderStore();
 </script>
 
 <style scoped>
+* {
+    @apply bg-zinc-700 my-auto
+}
+
 header {
     transform-style: preserve-3d;
 }

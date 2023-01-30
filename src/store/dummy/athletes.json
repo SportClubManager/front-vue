@@ -5,8 +5,8 @@
         "lastName": "Tarasuk",
         "dob": "2000-01-20",
         "sex": "male",
-        "phone": "",
-        "email": ""
+        "phone": "test1@test.com",
+        "email": "1234567890"
     },
     {
         "id": 2,
@@ -14,8 +14,8 @@
         "lastName": "Danyluk",
         "dob": "1989-09-16",
         "sex": "male",
-        "phone": "",
-        "email": ""
+        "phone": "test2@test.com",
+        "email": "1234567890"
     },
     {
         "id": 3,
@@ -23,8 +23,8 @@
         "lastName": "Hanenko",
         "dob": "1999-03-28",
         "sex": "female",
-        "phone": "",
-        "email": ""
+        "phone": "test3@test.com",
+        "email": "0987654321"
     },
     {
         "id": 4,
@@ -32,7 +32,7 @@
         "lastName": "Hanenko",
         "dob": "1999-03-28",
         "sex": "female",
-        "phone": "",
+        "phone": "test4@test.com",
         "email": ""
     },
     {
@@ -42,7 +42,7 @@
         "dob": "1999-03-28",
         "sex": "female",
         "phone": "",
-        "email": ""
+        "email": "1234567890"
     },
     {
         "id": 6,
@@ -114,7 +114,7 @@
         "dob": "1999-03-28",
         "sex": "female",
         "phone": "",
-        "email": ""
+        "email": "test@test.com"
     },
     {
         "id": 14,
@@ -176,7 +176,7 @@
         "lastName": "Hanenko",
         "dob": "1999-03-28",
         "sex": "female",
-        "phone": "",
+        "phone": "test@test.com",
         "email": ""
     },
     {
@@ -257,7 +257,7 @@
         "lastName": "Hanenko",
         "dob": "1999-03-28",
         "sex": "female",
-        "phone": "",
+        "phone": "test@test.com",
         "email": ""
     },
     {
@@ -365,7 +365,7 @@
         "lastName": "Hanenko",
         "dob": "1999-03-28",
         "sex": "female",
-        "phone": "",
+        "phone": "test@test.com",
         "email": ""
     },
     {
@@ -428,7 +428,7 @@
         "lastName": "Hanenko",
         "dob": "1999-03-28",
         "sex": "female",
-        "phone": "",
-        "email": ""
+        "phone": "test47@test.com",
+        "email": "0987654321"
     }
 ]

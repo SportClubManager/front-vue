@@ -20,7 +20,7 @@ input {
 }
 
 a {
-    @apply text-sky-50
+    @apply text-sky-500
 }
 
 a:hover {
@@ -33,10 +33,6 @@ form {
 
 form * {
     @apply w-full
-}
-
-button[type="submit"] {
-    @apply bg-teal-600 rounded py-2 px-4
 }
 
 input:-webkit-autofill,
@@ -54,5 +50,29 @@ select:-webkit-autofill:focus {
 }
 
 .button {
-    @apply border rounded border-teal-600 p-2;
+    @apply border rounded py-1 px-2 text-center;
+}
+
+.button-primary {
+    @apply border-teal-500 text-teal-500
+}
+
+.button-warning {
+    @apply border-yellow-500 text-yellow-500
+}
+
+.button-danger {
+    @apply border-red-500 text-red-500
+}
+
+.button-secondary {
+    @apply border-gray-400 text-gray-400
+}
+
+.button-info {
+    @apply border-sky-500 text-sky-500
+}
+
+button:disabled {
+    @apply button-secondary
 }

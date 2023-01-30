@@ -2,6 +2,7 @@
     <ul class="flex space-x-2 mt-2.5">
         <li>
             <button
+                class="button button-primary"
                 type="button"
                 @click="onClickFirstPage"
                 :disabled="isInFirstPage"
@@ -12,6 +13,7 @@
         <!-- Visible Buttons Start -->
         <li v-for="page in pages" :key="page.name">
             <button
+                class="button button-primary"
                 type="button"
                 @click="onClickPage(page.name)"
                 :disabled="page.isDisabled"
@@ -22,6 +24,7 @@
         <!-- Visible Buttons End -->
         <li>
             <button
+                class="button button-primary"
                 type="button"
                 @click="onClickLastPage"
                 :disabled="isInLastPage"
@@ -95,11 +98,4 @@ const onClickLastPage = () => {
 </script>
 
 <style scoped>
-button {
-    @apply border border-teal-500 px-2.5 py-1 rounded
-}
-
-button:disabled {
-    @apply bg-teal-800
-}
 </style>

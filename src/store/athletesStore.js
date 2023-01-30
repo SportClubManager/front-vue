@@ -6,14 +6,20 @@ export const useAthletesStore = defineStore('athleteStore', {
         athletes,
     }),
     getters: {
-        get: (state) => {
+        findAll: (state) => {
             return (from, to) => {
                 return state.athletes.slice(from, to);
+            };
+        },
+        findById: (state) => {
+            return (id) => {
+                return state.athletes.find(athlete => athlete.id == id);
             };
         },
     },
     actions: {
         add: (athlete) => {
+            athlete.id = athletes.slice(-1) + 1;
             athletes.push(athlete);
         },
     },

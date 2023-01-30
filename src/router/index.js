@@ -37,17 +37,26 @@ const router = createRouter({
         {
             path: '/athletes',
             name: 'athletes',
-            component: () => import('@/views/athletes/AthletesView.vue'),
+            component: () => import('@/views/athletes/ListView.vue'),
             meta: {
-                title: 'Athletes',
+                title: 'Athlete List',
             },
         },
         {
             path: '/athletes/add',
             name: 'addAthlete',
-            component: () => import('@/views/athletes/AddAthleteView.vue'),
+            component: () => import('@/views/athletes/AddView.vue'),
             meta: {
-                title: 'Athletes',
+                title: 'Add Athlete',
+            },
+        },
+        {
+            path: '/athletes/:id',
+            name: 'athleteDetails',
+            component: () => import('@/views/athletes/DetailsView.vue'),
+            props: true,
+            meta: {
+                title: 'Athlete Details',
             },
         },
         {
