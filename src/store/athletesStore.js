@@ -11,16 +11,20 @@ export const useAthletesStore = defineStore('athleteStore', {
                 return state.athletes.slice(from, to);
             };
         },
-        findById: (state) => {
-            return (id) => {
-                return state.athletes.find(athlete => athlete.id == id);
-            };
-        },
+        findById: state => id => state.athletes.find(athlete => athlete.id === Number(id)),
     },
     actions: {
         add: (athlete) => {
             athlete.id = athletes.slice(-1) + 1;
             athletes.push(athlete);
         },
+
+        delete: (id) => {
+            const i = athletes.findIndex((athlete) => athlete.id === Number(id));
+
+            if (i > -1) {
+                athletes.splice(i, 1);
+            }
+        }
     },
 });

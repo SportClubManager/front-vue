@@ -5,8 +5,8 @@
         "lastName": "Tarasuk",
         "dob": "2000-01-20",
         "sex": "male",
-        "phone": "test1@test.com",
-        "email": "1234567890"
+        "phone": "1234567890",
+        "email": "test1@test.com"
     },
     {
         "id": 2,
@@ -14,8 +14,8 @@
         "lastName": "Danyluk",
         "dob": "1989-09-16",
         "sex": "male",
-        "phone": "test2@test.com",
-        "email": "1234567890"
+        "phone": "1234567890",
+        "email": "test2@test.com"
     },
     {
         "id": 3,
@@ -23,8 +23,8 @@
         "lastName": "Hanenko",
         "dob": "1999-03-28",
         "sex": "female",
-        "phone": "test3@test.com",
-        "email": "0987654321"
+        "phone": "0987654321",
+        "email": "test3@test.com"
     },
     {
         "id": 4,
@@ -32,8 +32,8 @@
         "lastName": "Hanenko",
         "dob": "1999-03-28",
         "sex": "female",
-        "phone": "test4@test.com",
-        "email": ""
+        "phone": "",
+        "email": "test4@test.com"
     },
     {
         "id": 5,
@@ -41,8 +41,8 @@
         "lastName": "Hanenko",
         "dob": "1999-03-28",
         "sex": "female",
-        "phone": "",
-        "email": "1234567890"
+        "phone": "1234567890",
+        "email": ""
     },
     {
         "id": 6,
@@ -365,8 +365,8 @@
         "lastName": "Hanenko",
         "dob": "1999-03-28",
         "sex": "female",
-        "phone": "test@test.com",
-        "email": ""
+        "phone": "",
+        "email": "test@test.com"
     },
     {
         "id": 41,
@@ -428,7 +428,7 @@
         "lastName": "Hanenko",
         "dob": "1999-03-28",
         "sex": "female",
-        "phone": "test47@test.com",
-        "email": "0987654321"
+        "phone": "0987654321",
+        "email": "test47@test.com"
     }
 ]

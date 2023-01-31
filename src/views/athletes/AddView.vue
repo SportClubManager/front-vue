@@ -26,7 +26,7 @@ const athletesStore = useAthletesStore();
 const firstName = ref('');
 const lastName = ref('');
 const sex = ref('');
-const dob = ref('');
+const dob = ref('2023-01-30');
 const email = ref('');
 const phone = ref('');
 

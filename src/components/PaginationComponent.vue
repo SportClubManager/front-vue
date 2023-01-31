@@ -48,9 +48,6 @@ const props = defineProps({
 const emit = defineEmits(['pagechanged']);
 
 const startPage = computed(() => {
-    console.log('props.perPage', props.perPage);
-    console.log('props.totalPages', props.totalPages);
-    console.log('props.maxVisibleButtons', props.maxVisibleButtons);
     let sp = props.currentPage - Math.floor(props.perPage / 2);
 
     if (sp < 1) {
