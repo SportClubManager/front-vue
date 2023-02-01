@@ -1,5 +1,5 @@
 <template>
-    <ul class="flex space-x-2 mt-2.5">
+    <ul class="flex space-x-2 my-2.5">
         <li>
             <button
                 class="button button-primary"
@@ -36,7 +36,7 @@
 </template>
 
 <script setup>
-import { computed, defineEmits } from 'vue';
+import { defineEmits } from 'vue';
 
 const props = defineProps({
     maxVisibleButtons: { type: Number, required: false, default: 3 },
@@ -47,7 +47,7 @@ const props = defineProps({
 
 const emit = defineEmits(['pagechanged']);
 
-const startPage = computed(() => {
+const startPage = () => {
     let sp = props.currentPage - Math.floor(props.perPage / 2);
 
     if (sp < 1) {
@@ -63,9 +63,9 @@ const startPage = computed(() => {
     }
 
     return sp;
-});
+};
 
-const pages = computed(() => {
+const pages = () => {
     const range = [];
 
     for (let i = startPage.value; i < startPage.value + props.maxVisibleButtons; i++) {
@@ -73,10 +73,10 @@ const pages = computed(() => {
     }
 
     return range;
-});
+};
 
-const isInFirstPage = computed(() => props.currentPage === 1);
-const isInLastPage = computed(() => props.currentPage === props.totalPages);
+const isInFirstPage = () => props.currentPage === 1;
+const isInLastPage = () => props.currentPage === props.totalPages;
 const onClickPage = page => emit('pagechanged', page);
 const onClickFirstPage = () => emit('pagechanged', 1);
 const onClickLastPage = () => emit('pagechanged', props.totalPages);
