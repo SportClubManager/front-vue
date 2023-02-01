@@ -7,7 +7,11 @@
         <p>Day Of Birth: {{ athlete.dob }}</p>
         <p>Email: <a :href="'mailto:' + athlete.email" target="_blank">{{ athlete.email }}</a></p>
         <p>Phone: <a :href="'tel:' + athlete.phone" target="_blank">{{ athlete.phone }}</a></p>
-        <router-link :to="{name: 'athleteUpdate', params: {id: athlete.id}}" class="button button-warning w-full">edit
+        <router-link
+            :to="{name: 'athleteUpdate', params: {id: athlete.id}}"
+            class="button button-warning flex justify-center"
+        >
+            edit
         </router-link>
         <button class="button button-danger w-full" @click="deleteAthlete">delete</button>
     </div>
