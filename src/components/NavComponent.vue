@@ -13,8 +13,7 @@
             </div>
         </div>
     </div>
-    <ul class="w-full border-t border-teal-600 mt-2.5 pt-2.5 text-right space-y-2.5" v-if="isActive"
-        @click="isActive=false">
+    <ul class="w-full border-t border-teal-600 mt-2.5 pt-2.5 text-right space-y-2.5" v-if="isActive" @click="close">
         <li v-if="authStore.isAuth">
             <router-link :to="{ name: 'home' }">Home</router-link>
         </li>
@@ -41,6 +40,10 @@ const isActive = ref(false);
 const toggleMenu = () => {
     isActive.value = !isActive.value;
 };
+
+const close = () => {
+    isActive.value = false;
+}
 </script>
 
 <style scoped>

@@ -75,23 +75,11 @@ const pages = computed(() => {
     return range;
 });
 
-const isInFirstPage = computed(() => {
-    return props.currentPage === 1;
-});
-
-const isInLastPage = computed(() => {
-    return props.currentPage === props.totalPages;
-});
-
-const onClickFirstPage = () => {
-    emit('pagechanged', 1);
-};
-const onClickPage = (page) => {
-    emit('pagechanged', page);
-};
-const onClickLastPage = () => {
-    emit('pagechanged', props.totalPages);
-};
+const isInFirstPage = computed(() => props.currentPage === 1);
+const isInLastPage = computed(() => props.currentPage === props.totalPages);
+const onClickPage = page => emit('pagechanged', page);
+const onClickFirstPage = () => emit('pagechanged', 1);
+const onClickLastPage = () => emit('pagechanged', props.totalPages);
 </script>
 
 <style scoped>

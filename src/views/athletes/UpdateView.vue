@@ -9,18 +9,12 @@ import router from '@/router';
 import FormView from '@/views/athletes/FormView.vue';
 
 const athletesStore = useAthletesStore();
-const athlete = ref({
-    firstName: '',
-    lastName: '',
-    sex: '',
-    dob: '2023-01-30',
-    email: '',
-    phone: '',
-});
+const props = defineProps(['id']);
+const athlete = ref(athletesStore.findById(props.id));
 
 const onSubmit = () => {
-    athletesStore.add(athlete.value);
-    router.push({ name: 'athletes' });
+    athletesStore.update(athlete.value);
+    router.push({ name: 'athleteDetails', params: { id: athlete.value.id } });
 };
 </script>
 

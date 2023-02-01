@@ -51,6 +51,15 @@ const router = createRouter({
             },
         },
         {
+            path: '/athletes/edit/:id',
+            name: 'athleteUpdate',
+            component: () => import('@/views/athletes/UpdateView.vue'),
+            props: true,
+            meta: {
+                title: 'Edit Athlete',
+            },
+        },
+        {
             path: '/athletes/:id',
             name: 'athleteDetails',
             component: () => import('@/views/athletes/DetailsView.vue'),
