@@ -1,0 +1,186 @@
+[
+    {
+        "id": 1,
+        "name": "adults_1",
+        "schedule": [
+            {
+                "weekday": "Mon",
+                "duration": "60",
+                "startTime": "17:00"
+            },
+            {
+                "weekday": "Wed",
+                "duration": "60",
+                "startTime": "17:00"
+            },
+            {
+                "weekday": "Fri",
+                "duration": "60",
+                "startTime": "16:00"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "teens_1",
+        "schedule": [
+            {
+                "weekday": "Tue",
+                "duration": "60",
+                "startTime": "17:00"
+            },
+            {
+                "weekday": "Thu",
+                "duration": "60",
+                "startTime": "17:00"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "children_1",
+        "schedule": [
+            {
+                "weekday": "Mon",
+                "duration": "60",
+                "startTime": "13:00"
+            },
+            {
+                "weekday": "Wed",
+                "duration": "60",
+                "startTime": "13:00"
+            },
+            {
+                "weekday": "Fri",
+                "duration": "60",
+                "startTime": "13:00"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "adults_2",
+        "schedule": [
+            {
+                "weekday": "Mon",
+                "duration": "60",
+                "startTime": "15:00"
+            },
+            {
+                "weekday": "Wed",
+                "duration": "60",
+                "startTime": "15:00"
+            },
+            {
+                "weekday": "Fri",
+                "duration": "60",
+                "startTime": "15:00"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "teens_2",
+        "schedule": [
+            {
+                "weekday": "Tue",
+                "duration": "60",
+                "startTime": "13:00"
+            },
+            {
+                "weekday": "Thu",
+                "duration": "60",
+                "startTime": "12:00"
+            },
+            {
+                "weekday": "Sat",
+                "duration": "60",
+                "startTime": "16:00"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "children_2",
+        "schedule": [
+            {
+                "weekday": "Mon",
+                "duration": "60",
+                "startTime": "09:00"
+            },
+            {
+                "weekday": "Wed",
+                "duration": "60",
+                "startTime": "09:00"
+            },
+            {
+                "weekday": "Fri",
+                "duration": "60",
+                "startTime": "09:00"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "adults_3",
+        "schedule": [
+            {
+                "weekday": "Tue",
+                "duration": "60",
+                "startTime": "19:00"
+            },
+            {
+                "weekday": "Thu",
+                "duration": "60",
+                "startTime": "19:00"
+            },
+            {
+                "weekday": "Sat",
+                "duration": "60",
+                "startTime": "19:00"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "teens_3",
+        "schedule": [
+            {
+                "weekday": "Mon",
+                "duration": "60",
+                "startTime": "11:00"
+            },
+            {
+                "weekday": "Wed",
+                "duration": "60",
+                "startTime": "11:00"
+            },
+            {
+                "weekday": "Fri",
+                "duration": "60",
+                "startTime": "11:00"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "children_3",
+        "schedule": [
+            {
+                "weekday": "Tue",
+                "duration": "60",
+                "startTime": "07:00"
+            },
+            {
+                "weekday": "Thu",
+                "duration": "60",
+                "startTime": "07:00"
+            },
+            {
+                "weekday": "Sun",
+                "duration": "60",
+                "startTime": "07:00"
+            }
+        ]
+    }
+]

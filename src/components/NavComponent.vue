@@ -18,6 +18,9 @@
             <router-link :to="{ name: 'home' }">Home</router-link>
         </li>
         <li v-if="authStore.isAuth">
+            <router-link :to="{ name: 'groups' }">Groups</router-link>
+        </li>
+        <li v-if="authStore.isAuth">
             <router-link :to="{ name: 'athletes' }">Athletes</router-link>
         </li>
         <li v-if="!authStore.isAuth">

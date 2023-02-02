@@ -2,11 +2,11 @@
     <table class="border-collapse table-auto w-full text-sm">
         <thead>
         <tr>
-            <th>
+            <th class="text-left">
                 <p>Full Name</p>
                 <p>(sex)</p>
             </th>
-            <th>
+            <th class="text-left">
                 <p>DOB</p>
                 <p>(age)</p>
             </th>
@@ -25,7 +25,7 @@
             </td>
             <td>
                 <p>{{ athlete.dob }}</p>
-                <p>({{ age(athlete) }})</p>
+                <p>({{ ageCalculator(athlete.dob) }})</p>
             </td>
             <td class="text-right">
                 <a href="#" class="button button-info">charge</a>
@@ -46,19 +46,13 @@
 import { useAthletesStore } from '@/store/athletesStore';
 import { ref } from 'vue';
 import PaginationComponent from '@/components/PaginationComponent.vue';
+import ageCalculator from '../../services/AgeCalculator';
 
 const athletesStore = useAthletesStore();
 const currentPage = ref(1);
 const perPage = ref(10);
 const totalPages = ref(Math.ceil(athletesStore.athletes.length / perPage.value));
 const athletes = ref(athletesStore.findAll(0, perPage.value));
-
-const age = (athlete) => {
-    let currentDate = new Date();
-    let birthDate = new Date(athlete.dob);
-
-    return Math.floor((currentDate - birthDate) / 31557600000);
-};
 
 const onPageChange = (page) => {
     currentPage.value = page;

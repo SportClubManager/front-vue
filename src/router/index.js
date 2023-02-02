@@ -35,11 +35,54 @@ const router = createRouter({
             },
         },
         {
+            path: '/groups',
+            name: 'groups',
+            component: () => import('@/views/groups/ListView.vue'),
+            meta: {
+                title: 'Groups List',
+            },
+        },
+        {
+            path: '/groups/add',
+            name: 'addGroup',
+            component: () => import('@/views/groups/AddView.vue'),
+            meta: {
+                title: 'Add Group',
+            },
+        },
+        {
+            path: '/groups/:id',
+            name: 'groupDetails',
+            component: () => import('@/views/groups/DetailsView.vue'),
+            props: true,
+            meta: {
+                title: 'Group Details',
+            },
+        },
+        {
+            path: '/groups/edit/:id',
+            name: 'groupUpdate',
+            component: () => import('@/views/groups/UpdateView.vue'),
+            props: true,
+            meta: {
+                title: 'Edit Group',
+            },
+        },
+        {
             path: '/athletes',
             name: 'athletes',
             component: () => import('@/views/athletes/ListView.vue'),
             meta: {
-                title: 'Athlete List',
+                title: 'Athletes List',
+            },
+        },
+        {
+            path: '/athletes/:id',
+            name: 'athleteDetails',
+            component: () => import('@/views/athletes/DetailsView.vue'),
+            props: true,
+            meta: {
+                title: 'Athlete Details',
             },
         },
         {
@@ -57,15 +100,6 @@ const router = createRouter({
             props: true,
             meta: {
                 title: 'Edit Athlete',
-            },
-        },
-        {
-            path: '/athletes/:id',
-            name: 'athleteDetails',
-            component: () => import('@/views/athletes/DetailsView.vue'),
-            props: true,
-            meta: {
-                title: 'Athlete Details',
             },
         },
         {
