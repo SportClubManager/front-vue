@@ -9,13 +9,13 @@
                 </div>
             </div>
         </div>
-        <DayComponent :title="`Sun`" :start-time="startTime" :end-time="endTime" :events="events[`Sun`]"/>
-        <DayComponent :title="`Mon`" :start-time="startTime" :end-time="endTime" :events="events[`Mon`]"/>
-        <DayComponent :title="`Tue`" :start-time="startTime" :end-time="endTime" :events="events[`Tue`]"/>
-        <DayComponent :title="`Wed`" :start-time="startTime" :end-time="endTime" :events="events[`Wed`]"/>
-        <DayComponent :title="`Thu`" :start-time="startTime" :end-time="endTime" :events="events[`Thu`]"/>
-        <DayComponent :title="`Fri`" :start-time="startTime" :end-time="endTime" :events="events[`Fri`]"/>
-        <DayComponent :title="`Sat`" :start-time="startTime" :end-time="endTime" :events="events[`Sat`]" class="border-r-0" />
+        <DayComponent v-for="(day, i) in days"
+                      :key="day"
+                      :title="day"
+                      :start-time="startTime"
+                      :end-time="endTime"
+                      :events="events[day]"
+                      :class="{'border-r-0': i === (days.length-1)}" />
     </div>
 </template>
 
@@ -26,6 +26,7 @@ const props = defineProps({
     groups: { type: Array, required: true },
     startTime: { type: Date, required: false, default: new Date('1970-01-01 06:00') },
     endTime: { type: Date, required: false, default: new Date('1970-01-01 23:00') },
+    days: { type: Array, required: false, default: () => [`Sun`, `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`] },
 });
 
 const events = {};
@@ -36,7 +37,7 @@ props.groups.forEach(group => {
             events[event.day] = [];
         }
         events[event.day].push(event);
-    })
+    });
 });
 </script>
 
