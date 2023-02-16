@@ -2,11 +2,13 @@
     <div ref="dayColumn" class="border-r">
         <h3 class="text-center">{{ title }}</h3>
         <div v-if="isMounted" class="relative">
-            <div v-for="e in events"
-                 :key="e.groupInfo.id"
-                 :style="{'top': e.top + 'px', 'height': e.height + 'px', 'background-color': e.groupInfo.color}"
-                 class="left-0 right-0 mx-auto bg-red-400 w-2/3 absolute opacity-50"
-            ></div>
+            <router-link
+                v-for="e in events"
+                :key="e.groupInfo.id"
+                :style="{'top': e.top + 'px', 'height': e.height + 'px', 'background-color': e.groupInfo.color}"
+                class="left-0 right-0 mx-auto bg-red-400 w-2/3 absolute opacity-50"
+                :to="{name: 'groupDetails', params: {id: e.groupInfo.id}}"
+            />
         </div>
     </div>
 </template>
