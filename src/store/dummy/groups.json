@@ -2,184 +2,198 @@
     {
         "id": 1,
         "name": "adults_1",
+        "color": "deeppink",
         "schedule": [
             {
-                "weekday": "Mon",
-                "duration": "60",
-                "startTime": "17:00"
+                "day": "Mon",
+                "start": "17:00",
+                "end": "18:00"
             },
             {
-                "weekday": "Wed",
-                "duration": "60",
-                "startTime": "17:00"
+                "day": "Wed",
+                "start": "17:00",
+                "end": "18:00"
             },
             {
-                "weekday": "Fri",
-                "duration": "60",
-                "startTime": "16:00"
+                "day": "Fri",
+                "start": "16:00",
+                "end": "17:00"
             }
         ]
     },
     {
         "id": 2,
         "name": "teens_1",
+        "color": "blue",
         "schedule": [
             {
-                "weekday": "Tue",
-                "duration": "60",
-                "startTime": "17:00"
+                "day": "Tue",
+                "start": "17:00",
+                "end": "18:00"
             },
             {
-                "weekday": "Thu",
-                "duration": "60",
-                "startTime": "17:00"
+                "day": "Sun",
+                "start": "13:00",
+                "end": "14:00"
+            },
+            {
+                "day": "Thu",
+                "start": "17:00",
+                "end": "18:00"
             }
         ]
     },
     {
         "id": 3,
         "name": "children_1",
+        "color": "cyan",
         "schedule": [
             {
-                "weekday": "Mon",
-                "duration": "60",
-                "startTime": "13:00"
+                "day": "Mon",
+                "start": "13:00",
+                "end": "14:00"
             },
             {
-                "weekday": "Wed",
-                "duration": "60",
-                "startTime": "13:00"
+                "day": "Wed",
+                "start": "13:00",
+                "end": "14:00"
             },
             {
-                "weekday": "Fri",
-                "duration": "60",
-                "startTime": "13:00"
+                "day": "Fri",
+                "start": "13:00",
+                "end": "14:00"
             }
         ]
     },
     {
         "id": 4,
         "name": "adults_2",
+        "color": "white",
         "schedule": [
             {
-                "weekday": "Mon",
-                "duration": "60",
-                "startTime": "15:00"
+                "day": "Mon",
+                "start": "15:00",
+                "end": "16:00"
             },
             {
-                "weekday": "Wed",
-                "duration": "60",
-                "startTime": "15:00"
+                "day": "Wed",
+                "start": "15:00",
+                "end": "16:00"
             },
             {
-                "weekday": "Fri",
-                "duration": "60",
-                "startTime": "15:00"
+                "day": "Fri",
+                "start": "15:00",
+                "end": "16:00"
             }
         ]
     },
     {
         "id": 5,
         "name": "teens_2",
+        "color": "green",
         "schedule": [
             {
-                "weekday": "Tue",
-                "duration": "60",
-                "startTime": "13:00"
+                "day": "Tue",
+                "start": "13:00",
+                "end": "14:00"
             },
             {
-                "weekday": "Thu",
-                "duration": "60",
-                "startTime": "12:00"
+                "day": "Thu",
+                "start": "12:00",
+                "end": "14:00"
             },
             {
-                "weekday": "Sat",
-                "duration": "60",
-                "startTime": "16:00"
+                "day": "Sat",
+                "start": "16:00",
+                "end": "17:00"
             }
         ]
     },
     {
         "id": 6,
         "name": "children_2",
+        "color": "yellow",
         "schedule": [
             {
-                "weekday": "Mon",
-                "duration": "60",
-                "startTime": "09:00"
+                "day": "Mon",
+                "start": "09:00",
+                "end": "10:00"
             },
             {
-                "weekday": "Wed",
-                "duration": "60",
-                "startTime": "09:00"
+                "day": "Wed",
+                "start": "09:00",
+                "end": "10:00"
             },
             {
-                "weekday": "Fri",
-                "duration": "60",
-                "startTime": "09:00"
+                "day": "Fri",
+                "start": "09:00",
+                "end": "10:00"
             }
         ]
     },
     {
         "id": 7,
         "name": "adults_3",
+        "color": "orange",
         "schedule": [
             {
-                "weekday": "Tue",
-                "duration": "60",
-                "startTime": "19:00"
+                "day": "Tue",
+                "start": "19:00",
+                "end": "20:00"
             },
             {
-                "weekday": "Thu",
-                "duration": "60",
-                "startTime": "19:00"
+                "day": "Thu",
+                "start": "19:00",
+                "end": "20:00"
             },
             {
-                "weekday": "Sat",
-                "duration": "60",
-                "startTime": "19:00"
+                "day": "Sat",
+                "start": "19:00",
+                "end": "20:00"
             }
         ]
     },
     {
         "id": 8,
         "name": "teens_3",
+        "color": "lime",
         "schedule": [
             {
-                "weekday": "Mon",
-                "duration": "60",
-                "startTime": "11:00"
+                "day": "Mon",
+                "start": "11:00",
+                "end": "12:00"
             },
             {
-                "weekday": "Wed",
-                "duration": "60",
-                "startTime": "11:00"
+                "day": "Wed",
+                "start": "11:00",
+                "end": "12:00"
             },
             {
-                "weekday": "Fri",
-                "duration": "60",
-                "startTime": "11:00"
+                "day": "Fri",
+                "start": "11:00",
+                "end": "12:00"
             }
         ]
     },
     {
         "id": 9,
         "name": "children_3",
+        "color": "purple",
         "schedule": [
             {
-                "weekday": "Tue",
-                "duration": "60",
-                "startTime": "07:00"
+                "day": "Tue",
+                "start": "07:00",
+                "end": "08:00"
             },
             {
-                "weekday": "Thu",
-                "duration": "60",
-                "startTime": "07:00"
+                "day": "Thu",
+                "start": "07:00",
+                "end": "08:00"
             },
             {
-                "weekday": "Sun",
-                "duration": "60",
-                "startTime": "07:00"
+                "day": "Sun",
+                "start": "07:00",
+                "end": "18:00"
             }
         ]
     }

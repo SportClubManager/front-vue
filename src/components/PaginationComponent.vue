@@ -36,7 +36,7 @@
 </template>
 
 <script setup>
-import { computed, defineEmits } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps({
     maxVisibleButtons: { type: Number, required: false, default: 3 },

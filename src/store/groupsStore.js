@@ -6,7 +6,16 @@ export const useGroupsStore = defineStore('groupsStore', {
         groups,
     }),
     getters: {
-        findAll: state => (from, to) => state.groups.slice(from, to),
+        findAll: state => (from, to) => {
+            if (!from) {
+                from = 0;
+            }
+            if (!to) {
+                to = state.groups.length;
+            }
+
+            return state.groups.slice(from, to);
+        },
         findById: state => id => state.groups.find(group => group.id === Number(id)),
     },
     actions: {
