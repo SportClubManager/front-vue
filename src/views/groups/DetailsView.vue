@@ -3,7 +3,6 @@
         <p>ID: {{ group.id }}</p>
         <p>Name: {{ group.name }}</p>
         <p>{{ startTime }}</p>
-        <InputRangeSliderComponent id="timeSlider" class="w-full" v-model="startTime"/>
         <router-link
             :to="{name: 'groupUpdate', params: {id: group.id}}"
             class="button button-warning flex justify-center"
@@ -18,7 +17,6 @@
 import { ref } from 'vue';
 import router from '@/router';
 import { useGroupsStore } from '@/store/groupsStore';
-import InputRangeSliderComponent from '@/components/InputRangeSliderComponent.vue';
 
 const props = defineProps(['id']);
 const groupsStore = useGroupsStore();
