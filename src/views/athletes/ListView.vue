@@ -33,7 +33,7 @@
         </tr>
         </tbody>
     </table>
-    <pagination-component
+    <pagination-component v-if="totalPages > 1"
         :totalPages="totalPages"
         :perPage="perPage"
         :maxVisibleButtons="5"

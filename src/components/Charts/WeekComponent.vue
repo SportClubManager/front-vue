@@ -20,18 +20,19 @@
 </template>
 
 <script setup>
+import days from '@/store/weekdays.json';
 import DayComponent from '@/components/Charts/DayComponent.vue';
 
 const props = defineProps({
     groups: { type: Array, required: true },
     startTime: { type: Date, required: false, default: new Date('1970-01-01 06:00') },
     endTime: { type: Date, required: false, default: new Date('1970-01-01 23:00') },
-    days: { type: Array, required: false, default: () => [`Sun`, `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`] },
+    days: { type: Array, required: false, default: () => days },
 });
 
 const events = {};
 props.groups.forEach(group => {
-    group.schedule.forEach(event => {
+    group.events.forEach(event => {
         event.groupInfo = group;
         if (events[event.day] === undefined) {
             events[event.day] = [];

@@ -2,19 +2,22 @@
     {
         "id": 1,
         "name": "adults_1",
-        "color": "deeppink",
-        "schedule": [
+        "color": "#ff00f7",
+        "events": [
             {
+                "id": 1,
                 "day": "Mon",
                 "start": "17:00",
                 "end": "18:00"
             },
             {
+                "id": 2,
                 "day": "Wed",
                 "start": "17:00",
                 "end": "18:00"
             },
             {
+                "id": 3,
                 "day": "Fri",
                 "start": "16:00",
                 "end": "17:00"
@@ -24,19 +27,22 @@
     {
         "id": 2,
         "name": "teens_1",
-        "color": "blue",
-        "schedule": [
+        "color": "#0091ff",
+        "events": [
             {
+                "id": 4,
                 "day": "Tue",
                 "start": "17:00",
                 "end": "18:00"
             },
             {
+                "id": 5,
                 "day": "Sun",
                 "start": "13:00",
                 "end": "14:00"
             },
             {
+                "id": 6,
                 "day": "Thu",
                 "start": "17:00",
                 "end": "18:00"
@@ -46,19 +52,22 @@
     {
         "id": 3,
         "name": "children_1",
-        "color": "cyan",
-        "schedule": [
+        "color": "#00fbff",
+        "events": [
             {
+                "id": 7,
                 "day": "Mon",
                 "start": "13:00",
                 "end": "14:00"
             },
             {
+                "id": 8,
                 "day": "Wed",
                 "start": "13:00",
                 "end": "14:00"
             },
             {
+                "id": 9,
                 "day": "Fri",
                 "start": "13:00",
                 "end": "14:00"
@@ -68,19 +77,22 @@
     {
         "id": 4,
         "name": "adults_2",
-        "color": "white",
-        "schedule": [
+        "color": "#ffffff",
+        "events": [
             {
+                "id": 10,
                 "day": "Mon",
                 "start": "15:00",
                 "end": "16:00"
             },
             {
+                "id": 11,
                 "day": "Wed",
                 "start": "15:00",
                 "end": "16:00"
             },
             {
+                "id": 12,
                 "day": "Fri",
                 "start": "15:00",
                 "end": "16:00"
@@ -90,19 +102,22 @@
     {
         "id": 5,
         "name": "teens_2",
-        "color": "green",
-        "schedule": [
+        "color": "#00ff33",
+        "events": [
             {
+                "id": 13,
                 "day": "Tue",
                 "start": "13:00",
                 "end": "14:00"
             },
             {
+                "id": 14,
                 "day": "Thu",
                 "start": "12:00",
                 "end": "14:00"
             },
             {
+                "id": 15,
                 "day": "Sat",
                 "start": "16:00",
                 "end": "17:00"
@@ -112,19 +127,22 @@
     {
         "id": 6,
         "name": "children_2",
-        "color": "yellow",
-        "schedule": [
+        "color": "#fff700",
+        "events": [
             {
+                "id": 16,
                 "day": "Mon",
                 "start": "09:00",
                 "end": "10:00"
             },
             {
+                "id": 17,
                 "day": "Wed",
                 "start": "09:00",
                 "end": "10:00"
             },
             {
+                "id": 18,
                 "day": "Fri",
                 "start": "09:00",
                 "end": "10:00"
@@ -134,19 +152,22 @@
     {
         "id": 7,
         "name": "adults_3",
-        "color": "orange",
-        "schedule": [
+        "color": "#ffae00",
+        "events": [
             {
+                "id": 19,
                 "day": "Tue",
                 "start": "19:00",
                 "end": "20:00"
             },
             {
+                "id": 20,
                 "day": "Thu",
                 "start": "19:00",
                 "end": "20:00"
             },
             {
+                "id": 21,
                 "day": "Sat",
                 "start": "19:00",
                 "end": "20:00"
@@ -156,19 +177,22 @@
     {
         "id": 8,
         "name": "teens_3",
-        "color": "lime",
-        "schedule": [
+        "color": "#1eff00",
+        "events": [
             {
+                "id": 22,
                 "day": "Mon",
                 "start": "11:00",
                 "end": "12:00"
             },
             {
+                "id": 23,
                 "day": "Wed",
                 "start": "11:00",
                 "end": "12:00"
             },
             {
+                "id": 24,
                 "day": "Fri",
                 "start": "11:00",
                 "end": "12:00"
@@ -178,19 +202,22 @@
     {
         "id": 9,
         "name": "children_3",
-        "color": "purple",
-        "schedule": [
+        "color": "#8c00ff",
+        "events": [
             {
+                "id": 25,
                 "day": "Tue",
                 "start": "07:00",
                 "end": "08:00"
             },
             {
+                "id": 26,
                 "day": "Thu",
                 "start": "07:00",
                 "end": "08:00"
             },
             {
+                "id": 27,
                 "day": "Sun",
                 "start": "07:00",
                 "end": "18:00"

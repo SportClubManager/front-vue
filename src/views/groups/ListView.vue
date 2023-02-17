@@ -1,8 +1,9 @@
 <template>
-    <table class="border-collapse table-auto w-full text-sm">
+    <dark-table-component>
         <thead>
         <tr>
             <th class="text-left">Name</th>
+            <th class="text-left">Color</th>
             <th class="text-right">
                 <router-link :to="{name: 'addGroup'}" class="button button-primary">+ add</router-link>
             </th>
@@ -12,6 +13,9 @@
         <tr v-for="group in groups" :key="group.id">
             <td class="pl-8">
                 <router-link :to="{name: 'groupDetails', params: {id: group.id}}">{{ group.name }}</router-link>
+            </td>
+            <td class="pl-8">
+                <div class="h-3 w-3" :style="{'background-color': group.color}"></div>
             </td>
             <td class="text-right">
                 <router-link
@@ -23,8 +27,8 @@
             </td>
         </tr>
         </tbody>
-    </table>
-    <pagination-component
+    </dark-table-component>
+    <pagination-component v-if="totalPages > 1"
         :totalPages="totalPages"
         :perPage="perPage"
         :maxVisibleButtons="5"
@@ -37,6 +41,7 @@
 import { ref } from 'vue';
 import { useGroupsStore } from '@/store/groupsStore';
 import PaginationComponent from '@/components/PaginationComponent.vue';
+import DarkTableComponent from '@/components/DarkTableComponent.vue';
 
 const groupsStore = useGroupsStore();
 const currentPage = ref(1);
@@ -53,15 +58,4 @@ const onPageChange = (page) => {
 </script>
 
 <style scoped>
-table th, table td {
-    @apply border-b border-slate-600 p-4
-}
-
-table tbody * {
-    @apply bg-zinc-700
-}
-
-table th > p:nth-child(n + 2), table td > p:nth-child(n + 2) {
-    @apply text-xs text-slate-500
-}
 </style>
