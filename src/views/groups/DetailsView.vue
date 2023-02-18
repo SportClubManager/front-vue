@@ -9,10 +9,11 @@
         >
             edit
         </router-link>
-        <button class="button button-danger w-full" @click="remove">delete</button>
+        <button class="button button-danger w-full" @click="onGroupDelete">delete</button>
 
         <p>Events:</p>
         <event-list-view :events="group.events" @eventDelete="onEventDelete" @event-add="onEventAdd" />
+        <button class="button button-info w-full">Schedule</button>
     </div>
 </template>
 
@@ -26,15 +27,19 @@ const props = defineProps(['id']);
 const groupsStore = useGroupsStore();
 const group = ref(groupsStore.findById(props.id));
 
-const remove = () => {
-    if (confirm(`Do you really want to delete group ${group.value.name}?`)) {
+const onGroupDelete = () => {
+    if (confirm(`Confirm to delete group ${group.value.name}.`)) {
         groupsStore.deleteGroup(props.id);
         router.push({ name: 'groups' });
     }
 };
 
-const onEventDelete = id => groupsStore.deleteEvent(id);
 const onEventAdd = event => groupsStore.addEvent(props.id, event);
+const onEventDelete = id => {
+    if (confirm(`Confirm to delete event.`)) {
+        groupsStore.deleteEvent(id);
+    }
+};
 </script>
 
 <style scoped>
