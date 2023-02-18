@@ -13,7 +13,11 @@
 
         <p>Events:</p>
         <event-list-view :events="group.events" @eventDelete="onEventDelete" @event-add="onEventAdd" />
-        <button class="button button-info w-full">Schedule</button>
+        <button class="button button-info w-full" @click="showModal = true">Schedule</button>
+        <modal-component v-if="showModal" @close="showModal = false">
+            <template #header>Schedule</template>
+            <template #body><weekly-schedule-view /></template>
+        </modal-component>
     </div>
 </template>
 
@@ -22,10 +26,14 @@ import { ref } from 'vue';
 import router from '@/router';
 import { useGroupsStore } from '@/store/groupsStore';
 import EventListView from '@/views/groups/EventsView.vue';
+import ModalComponent from '@/components/ModalComponent.vue';
+import WeeklyScheduleView from '@/views/WeeklyScheduleView.vue';
 
 const props = defineProps(['id']);
 const groupsStore = useGroupsStore();
 const group = ref(groupsStore.findById(props.id));
+
+const showModal = ref(false);
 
 const onGroupDelete = () => {
     if (confirm(`Confirm to delete group ${group.value.name}.`)) {

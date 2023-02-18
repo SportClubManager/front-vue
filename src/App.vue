@@ -5,7 +5,7 @@ import HeaderComponent from '@/components/HeaderComponent.vue';
 <template>
     <header-component />
     <div class="content flex flex-col items-center">
-        <RouterView />
+        <router-view :key="$route.path"/>
     </div>
 </template>
 

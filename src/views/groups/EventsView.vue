@@ -1,5 +1,5 @@
 <template>
-    <dark-table-component>
+    <table-component>
         <thead>
         <tr>
             <th class="text-left">Day</th>
@@ -38,13 +38,13 @@
             </td>
         </tr>
         </tbody>
-    </dark-table-component>
+    </table-component>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import days from '@/store/weekdays.json';
-import DarkTableComponent from '@/components/DarkTableComponent.vue';
+import TableComponent from '@/components/TableComponent.vue';
 
 defineProps({ events: { type: Array, required: true } });
 

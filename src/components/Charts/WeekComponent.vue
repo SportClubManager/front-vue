@@ -1,5 +1,5 @@
 <template>
-    <div class="grid grid-cols-8 w-full ">
+    <div class="grid grid-cols-8 w-full overflow-hidden">
         <div class="border-r">
             <h3 class="text-center">t\d</h3>
             <div v-for="i in endTime.getHours() - startTime.getHours()" :key="i">

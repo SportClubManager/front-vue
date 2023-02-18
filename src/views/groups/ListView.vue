@@ -1,5 +1,5 @@
 <template>
-    <dark-table-component>
+    <table-component>
         <thead>
         <tr>
             <th class="text-left">Name</th>
@@ -27,7 +27,7 @@
             </td>
         </tr>
         </tbody>
-    </dark-table-component>
+    </table-component>
     <pagination-component v-if="totalPages > 1"
         :totalPages="totalPages"
         :perPage="perPage"
@@ -41,7 +41,7 @@
 import { ref } from 'vue';
 import { useGroupsStore } from '@/store/groupsStore';
 import PaginationComponent from '@/components/PaginationComponent.vue';
-import DarkTableComponent from '@/components/DarkTableComponent.vue';
+import TableComponent from '@/components/TableComponent.vue';
 
 const groupsStore = useGroupsStore();
 const currentPage = ref(1);
