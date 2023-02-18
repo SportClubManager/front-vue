@@ -12,6 +12,7 @@
         <tr>
             <td>
                 <select v-model="newEventDay" :class="{error: newEventDayError}">
+                    <option value="" disabled selected>Day</option>
                     <option v-for="day in days" :key="day" :value="day">{{ day }}</option>
                 </select>
             </td>
@@ -19,12 +20,14 @@
                 type="time"
                 v-model="newEventStart"
                 :class="{error: newEventStartError}"
-                onfocus="this.showPicker()"></td>
+                onfocus="this.showPicker()"
+                placeholder="--:--"></td>
             <td><input
                 type="time"
                 v-model="newEventEnd"
                 :class="{error: newEventEndError}"
-                onfocus="this.showPicker()"></td>
+                onfocus="this.showPicker()"
+                placeholder="--:--"></td>
             <td class="text-right">
                 <button class="button button-primary" @click="onEventAdd">+ add</button>
             </td>
