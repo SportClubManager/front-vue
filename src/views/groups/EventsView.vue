@@ -20,14 +20,12 @@
                 type="time"
                 v-model="newEventStart"
                 :class="{error: newEventStartError}"
-                onfocus="this.showPicker()"
-                placeholder="--:--"></td>
+                onfocus="this.showPicker()"></td>
             <td><input
                 type="time"
                 v-model="newEventEnd"
                 :class="{error: newEventEndError}"
-                onfocus="this.showPicker()"
-                placeholder="--:--"></td>
+                onfocus="this.showPicker()"></td>
             <td class="text-right">
                 <button class="button button-primary" @click="onEventAdd">+ add</button>
             </td>
@@ -52,8 +50,8 @@ import TableComponent from '@/components/TableComponent.vue';
 defineProps({ events: { type: Array, required: true } });
 
 const newEventDay = ref('');
-const newEventStart = ref('');
-const newEventEnd = ref('');
+const newEventStart = ref('00:00:00');
+const newEventEnd = ref('00:00:00');
 
 const newEventDayError = ref(false);
 const newEventStartError = ref(false);
@@ -65,10 +63,10 @@ const onEventAdd = () => {
     if (newEventDay.value === '') {
         newEventDayError.value = true;
     }
-    if (newEventStart.value === '') {
+    if (newEventStart.value === '00:00:00') {
         newEventStartError.value = true;
     }
-    if (newEventEnd.value === '') {
+    if (newEventEnd.value === '00:00:00') {
         newEventEndError.value = true;
     }
 
@@ -85,8 +83,8 @@ const onEventAdd = () => {
             end: newEventEnd.value,
         });
         newEventDay.value = '';
-        newEventStart.value = '';
-        newEventEnd.value = '';
+        newEventStart.value = '00:00:00';
+        newEventEnd.value = '00:00:00';
     }
 };
 </script>
