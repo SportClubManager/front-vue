@@ -6,7 +6,7 @@
 import { ref } from 'vue';
 import { useAthletesStore } from '@/store/athletesStore';
 import router from '@/router';
-import FormView from '@/views/athletes/FormView.vue';
+import FormView from '@/views/athletes/blocks/FormView.vue';
 
 const athletesStore = useAthletesStore();
 const athlete = ref({

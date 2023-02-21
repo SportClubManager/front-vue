@@ -2,10 +2,10 @@
     <ul class="flex space-x-2 my-2.5">
         <li>
             <button
+                :disabled="isInFirstPage"
                 class="button button-primary"
                 type="button"
                 @click="onClickFirstPage"
-                :disabled="isInFirstPage"
             >
                 First
             </button>
@@ -13,10 +13,10 @@
         <!-- Visible Buttons Start -->
         <li v-for="page in pages" :key="page.name">
             <button
+                :disabled="page.isDisabled"
                 class="button button-primary"
                 type="button"
                 @click="onClickPage(page.name)"
-                :disabled="page.isDisabled"
             >
                 {{ page.name }}
             </button>
@@ -24,10 +24,10 @@
         <!-- Visible Buttons End -->
         <li>
             <button
+                :disabled="isInLastPage"
                 class="button button-primary"
                 type="button"
                 @click="onClickLastPage"
-                :disabled="isInLastPage"
             >
                 Last
             </button>

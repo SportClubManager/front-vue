@@ -15,7 +15,7 @@
     @apply outline-none bg-zinc-700
 }
 
-input {
+input, select {
     @apply p-1 font-normal border-b border-zinc-600
 }
 

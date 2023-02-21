@@ -11,17 +11,17 @@
         </div>
         <DayComponent v-for="(day, i) in days"
                       :key="day"
-                      :title="day"
-                      :start-time="startTime"
+                      :class="{'border-r-0': i === (days.length-1)}"
                       :end-time="endTime"
-                      :events="events[day]"
-                      :class="{'border-r-0': i === (days.length-1)}" />
+                      :schedule="schedule[day]"
+                      :start-time="startTime"
+                      :title="day" />
     </div>
 </template>
 
 <script setup>
 import days from '@/store/weekdays.json';
-import DayComponent from '@/components/Charts/DayComponent.vue';
+import DayComponent from '@/components/Schedule/DayComponent.vue';
 
 const props = defineProps({
     groups: { type: Array, required: true },
@@ -30,14 +30,14 @@ const props = defineProps({
     days: { type: Array, required: false, default: () => days },
 });
 
-const events = {};
+const schedule = {};
 props.groups.forEach(group => {
-    group.events.forEach(event => {
+    group.schedule.forEach(event => {
         event.groupInfo = group;
-        if (events[event.day] === undefined) {
-            events[event.day] = [];
+        if (schedule[event.day] === undefined) {
+            schedule[event.day] = [];
         }
-        events[event.day].push(event);
+        schedule[event.day].push(event);
     });
 });
 </script>

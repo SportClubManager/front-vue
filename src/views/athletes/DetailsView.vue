@@ -18,18 +18,23 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import router from '@/router';
 import { useAthletesStore } from '@/store/athletesStore';
 import ageCalculator from '../../services/AgeCalculator';
+import { useHeaderStore } from '@/store/headerStore';
 
 const props = defineProps(['id']);
 const athletesStore = useAthletesStore();
+const headerStore = useHeaderStore();
 const athlete = ref(athletesStore.findById(props.id));
 
+onMounted(() => {
+    headerStore.setToObject({ name: 'athletes', title: 'Athletes list' });
+});
 const remove = () => {
     if (confirm(`Do you really want to delete athlete ${athlete.value.firstName} ${athlete.value.lastName}?`)) {
-        athletesStore.delete(props.id);
+        athletesStore.remove(props.id);
         router.push({ name: 'athletes' });
     }
 };

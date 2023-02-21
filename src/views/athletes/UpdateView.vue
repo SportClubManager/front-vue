@@ -1,20 +1,25 @@
 <template>
-    <FormView :athlete="athlete" @submit="onSubmit" />
+    <FormView :athlete="athlete" @cancel="onCancel" @submit="onSubmit" />
 </template>
 
 <script setup>
-import { ref } from 'vue';
 import { useAthletesStore } from '@/store/athletesStore';
 import router from '@/router';
-import FormView from '@/views/athletes/FormView.vue';
+import FormView from '@/views/athletes/blocks/FormView.vue';
 
 const athletesStore = useAthletesStore();
 const props = defineProps(['id']);
-const athlete = ref(athletesStore.findById(props.id));
+const athlete = athletesStore.findById(props.id);
 
-const onSubmit = () => {
-    athletesStore.update(athlete.value);
-    router.push({ name: 'athleteDetails', params: { id: athlete.value.id } });
+const onSubmit = a => {
+    athletesStore.update(a);
+    router.push({ name: 'athleteDetails', params: { id: a.id } });
+};
+
+const onCancel = () => {
+    if (confirm('Discard changes?')) {
+        router.push({ name: 'athleteDetails', params: { id: athlete.id } });
+    }
 };
 </script>
 

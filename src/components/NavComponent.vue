@@ -1,5 +1,8 @@
 <template>
-    <div id="nav-icon" class="button button-primary my-auto !py-2 !pt-2" @click="toggleMenu" :class="{ active: isActive }">
+    <div id="nav-icon"
+         :class="{ active: isActive }"
+         class="button button-primary my-auto !py-2 !pt-2"
+         @click="toggleMenu">
         <div class="flex overflow-hidden items-center justify-center duration-200">
             <div class="flex flex-col justify-between bg-zinc-700 w-5 h-5 duration-300">
                 <div class="bg-teal-500 h-[2px] w-7 duration-300 delay-100 origin-left"></div>
@@ -13,7 +16,7 @@
             </div>
         </div>
     </div>
-    <ul class="w-full border-t border-teal-600 mt-2.5 pt-2.5 text-right space-y-2.5" v-if="isActive" @click="close">
+    <ul v-if="isActive" class="w-full border-t border-teal-600 mt-2.5 pt-2.5 text-right space-y-2.5" @click="close">
         <li v-if="authStore.isAuth">
             <router-link :to="{ name: 'home' }">Home</router-link>
         </li>
@@ -46,7 +49,7 @@ const toggleMenu = () => {
 
 const close = () => {
     isActive.value = false;
-}
+};
 </script>
 
 <style scoped>

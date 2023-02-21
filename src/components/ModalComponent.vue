@@ -6,7 +6,7 @@
                 <slot name="header">
                     This is the default title!
                 </slot>
-                <button class="text-red-500" @click="close">x</button>
+                <button class="ml-4 text-red-500" @click="close">x</button>
             </header>
 
             <section class="relative p-1">

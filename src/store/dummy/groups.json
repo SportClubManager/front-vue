@@ -3,7 +3,7 @@
         "id": 1,
         "name": "adults_1",
         "color": "#ff00f7",
-        "events": [
+        "schedule": [
             {
                 "id": 1,
                 "day": "Mon",
@@ -28,7 +28,7 @@
         "id": 2,
         "name": "teens_1",
         "color": "#0091ff",
-        "events": [
+        "schedule": [
             {
                 "id": 4,
                 "day": "Tue",
@@ -53,7 +53,7 @@
         "id": 3,
         "name": "children_1",
         "color": "#00fbff",
-        "events": [
+        "schedule": [
             {
                 "id": 7,
                 "day": "Mon",
@@ -78,7 +78,7 @@
         "id": 4,
         "name": "adults_2",
         "color": "#ffffff",
-        "events": [
+        "schedule": [
             {
                 "id": 10,
                 "day": "Mon",
@@ -103,7 +103,7 @@
         "id": 5,
         "name": "teens_2",
         "color": "#00ff33",
-        "events": [
+        "schedule": [
             {
                 "id": 13,
                 "day": "Tue",
@@ -128,7 +128,7 @@
         "id": 6,
         "name": "children_2",
         "color": "#fff700",
-        "events": [
+        "schedule": [
             {
                 "id": 16,
                 "day": "Mon",
@@ -153,7 +153,7 @@
         "id": 7,
         "name": "adults_3",
         "color": "#ffae00",
-        "events": [
+        "schedule": [
             {
                 "id": 19,
                 "day": "Tue",
@@ -178,7 +178,7 @@
         "id": 8,
         "name": "teens_3",
         "color": "#1eff00",
-        "events": [
+        "schedule": [
             {
                 "id": 22,
                 "day": "Mon",
@@ -203,7 +203,7 @@
         "id": 9,
         "name": "children_3",
         "color": "#8c00ff",
-        "events": [
+        "schedule": [
             {
                 "id": 25,
                 "day": "Tue",

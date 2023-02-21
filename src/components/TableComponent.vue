@@ -1,6 +1,13 @@
 <template>
     <table class="dark">
-        <slot></slot>
+        <thead>
+        <tr>
+            <slot name="thead"></slot>
+        </tr>
+        </thead>
+        <tbody>
+        <slot name="tbody"></slot>
+        </tbody>
     </table>
 </template>
 
@@ -9,7 +16,11 @@
 
 <style>
 table.dark {
-    @apply border-collapse table-fixed w-full text-sm
+    @apply border-collapse w-full text-sm
+}
+
+table.dark span {
+    @apply text-xs text-slate-500
 }
 
 table.dark tbody * {
@@ -20,7 +31,7 @@ table.dark th, table td {
     @apply border-b border-slate-600 p-2
 }
 
-table.dark th > p:nth-child(n + 2), table td > p:nth-child(n + 2) {
-    @apply text-xs text-slate-500
+table.dark tr.active * {
+    @apply bg-teal-900
 }
 </style>

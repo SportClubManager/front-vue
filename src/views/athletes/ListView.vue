@@ -1,57 +1,33 @@
 <template>
-    <table class="border-collapse table-auto w-full text-sm">
-        <thead>
-        <tr>
-            <th class="text-left">
-                <p>Full Name</p>
-                <p>(sex)</p>
-            </th>
-            <th class="text-left">
-                <p>DOB</p>
-                <p>(age)</p>
-            </th>
+    <block-table-view :athletes="athletes">
+        <template #head>
             <th class="text-right">
                 <router-link :to="{name: 'addAthlete'}" class="button button-primary">+ add</router-link>
             </th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr v-for="athlete in athletes" :key="athlete.id">
-            <td class="pl-8">
-                <router-link :to="{name: 'athleteDetails', params: {id: athlete.id}}">{{ athlete.firstName }}
-                    {{ athlete.lastName }}
-                </router-link>
-                <p>({{ athlete.sex }})</p>
-            </td>
-            <td>
-                <p>{{ athlete.dob }}</p>
-                <p>({{ ageCalculator(athlete.dob) }})</p>
-            </td>
-            <td class="text-right">
-                <a href="#" class="button button-info">charge</a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+        </template>
+        <template #body>
+            <td class="text-right"><a class="button button-info" href="#">charge</a></td>
+        </template>
+    </block-table-view>
     <pagination-component v-if="totalPages > 1"
-        :totalPages="totalPages"
-        :perPage="perPage"
-        :maxVisibleButtons="5"
-        :currentPage="currentPage"
-        @pagechanged="onPageChange"
+                          :currentPage="currentPage"
+                          :maxVisibleButtons="5"
+                          :perPage="perPage"
+                          :totalPages="totalPages"
+                          @pagechanged="onPageChange"
     />
 </template>
 
 <script setup>
-import { useAthletesStore } from '@/store/athletesStore';
 import { ref } from 'vue';
+import { useAthletesStore } from '@/store/athletesStore';
+import BlockTableView from '@/views/athletes/blocks/TableView.vue';
 import PaginationComponent from '@/components/PaginationComponent.vue';
-import ageCalculator from '../../services/AgeCalculator';
 
 const athletesStore = useAthletesStore();
 const currentPage = ref(1);
 const perPage = ref(10);
-const totalPages = ref(Math.ceil(athletesStore.athletes.length / perPage.value));
+const totalPages = ref(Math.ceil(athletesStore.findAll(null, null).length / perPage.value));
 const athletes = ref(athletesStore.findAll(0, perPage.value));
 
 const onPageChange = (page) => {
@@ -63,15 +39,4 @@ const onPageChange = (page) => {
 </script>
 
 <style scoped>
-table th, table td {
-    @apply border-b border-slate-600 p-4
-}
-
-table tbody * {
-    @apply bg-zinc-700
-}
-
-table th > p:nth-child(n + 2), table td > p:nth-child(n + 2) {
-    @apply text-xs text-slate-500
-}
 </style>

@@ -1,44 +1,42 @@
 <template>
     <table-component>
-        <thead>
-        <tr>
+        <template #thead>
             <th class="text-left">Day</th>
             <th class="text-left">Start</th>
             <th class="text-left">End</th>
             <th class="text-right w-20">Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>
-                <select v-model="newEventDay" :class="{error: newEventDayError}">
-                    <option value="" disabled selected>Day</option>
-                    <option v-for="day in days" :key="day" :value="day">{{ day }}</option>
-                </select>
-            </td>
-            <td><input
-                type="time"
-                v-model="newEventStart"
-                :class="{error: newEventStartError}"
-                onfocus="this.showPicker()"></td>
-            <td><input
-                type="time"
-                v-model="newEventEnd"
-                :class="{error: newEventEndError}"
-                onfocus="this.showPicker()"></td>
-            <td class="text-right">
-                <button class="button button-primary" @click="onEventAdd">+ add</button>
-            </td>
-        </tr>
-        <tr v-for="event in events" :key="event.id">
-            <td>{{ event.day }}</td>
-            <td>{{ event.start }}</td>
-            <td>{{ event.end }}</td>
-            <td class="text-right">
-                <button class="button button-danger" @click.prevent="onEventDelete(event.id)">delete</button>
-            </td>
-        </tr>
-        </tbody>
+        </template>
+        <template #tbody>
+            <tr>
+                <td>
+                    <select v-model="newEventDay" :class="{error: newEventDayError}">
+                        <option disabled selected value="">Day</option>
+                        <option v-for="day in days" :key="day" :value="day">{{ day }}</option>
+                    </select>
+                </td>
+                <td><input
+                    v-model="newEventStart"
+                    :class="{error: newEventStartError}"
+                    onfocus="this.showPicker()"
+                    type="time"></td>
+                <td><input
+                    v-model="newEventEnd"
+                    :class="{error: newEventEndError}"
+                    onfocus="this.showPicker()"
+                    type="time"></td>
+                <td class="text-right">
+                    <button class="button button-primary" @click="onEventAdd">+ add</button>
+                </td>
+            </tr>
+            <tr v-for="event in schedule" :key="event.id">
+                <td>{{ event.day }}</td>
+                <td>{{ event.start }}</td>
+                <td>{{ event.end }}</td>
+                <td class="text-right">
+                    <button class="button button-danger" @click.prevent="onEventDelete(event.id)">delete</button>
+                </td>
+            </tr>
+        </template>
     </table-component>
 </template>
 
@@ -47,7 +45,7 @@ import { ref } from 'vue';
 import days from '@/store/weekdays.json';
 import TableComponent from '@/components/TableComponent.vue';
 
-defineProps({ events: { type: Array, required: true } });
+defineProps({ schedule: { type: Array, required: true } });
 
 const newEventDay = ref('');
 const newEventStart = ref('00:00:00');

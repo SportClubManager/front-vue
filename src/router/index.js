@@ -60,6 +60,15 @@ const router = createRouter({
             },
         },
         {
+            path: '/groups/:groupId/athletes',
+            name: 'groupAthletes',
+            component: () => import('@/views/groups/AthletesView.vue'),
+            props: true,
+            meta: {
+                title: 'Group Athletes',
+            },
+        },
+        {
             path: '/groups/edit/:id',
             name: 'groupUpdate',
             component: () => import('@/views/groups/UpdateView.vue'),
@@ -113,6 +122,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     title(to);
     guard(to, from, next);
+    useHeaderStore().setToObject(null);
 });
 
 export default router;

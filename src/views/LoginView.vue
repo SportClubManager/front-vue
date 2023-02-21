@@ -3,7 +3,7 @@
     <form @submit.prevent="handleSubmit">
         <input v-model="email" placeholder="email" />
         <input v-model="password" placeholder="password" type="password" />
-        <button type="submit" :disabled="isPending">{{ isPending ? 'Pending...' : 'Sign In' }}</button>
+        <button :disabled="isPending" type="submit">{{ isPending ? 'Pending...' : 'Sign In' }}</button>
     </form>
 </template>
 
